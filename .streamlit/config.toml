@@ -1,0 +1,26 @@
+[server]
+# 把 static/ 目录挂成静态资源，图片从这个路径直接给浏览器：
+#   app/static/xxx.jpg
+# 这样浏览器会正常懒加载和缓存，不需要把图片塞成 base64
+enableStaticServing = true
+
+[theme]
+base = "light"
+primaryColor = "#A9714B"
+backgroundColor = "#FBF7F0"
+secondaryBackgroundColor = "#F4ECE1"
+textColor = "#4A3F35"
+linkColor = "#A9714B"
+borderColor = "#E6DAC8"
+codeBackgroundColor = "#F4ECE1"
+baseRadius = "medium"
+buttonRadius = "full"
+showWidgetBorder = true
+showSidebarBorder = true
+linkUnderline = false
+
+# 不引 Google Fonts：中文字体动辄好几 MB，而且国内访问 googleapis 经常不通。
+# 用系统自带的楷体做标题（Windows/macOS 都有），正文交给系统无衬线字体。
+font = "system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif"
+headingFont = "'KaiTi', 'Kaiti SC', 'STKaiti', '楷体', 'Songti SC', serif"
+baseFontSize = 16

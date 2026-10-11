@@ -1,0 +1,25 @@
+# 密钥
+.streamlit/secrets.toml
+.env
+
+# 留言本：运行时会变，不入库
+guestbook.json
+
+# 原始视频：272.9MB，超过 GitHub 单文件 100MB 硬上限。
+# 仓库里用的是 static/clip_20240825.mp4（转码后的 720p，19MB）。
+/*.mp4
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
