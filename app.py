@@ -65,6 +65,8 @@ CSS = """
   margin: 0 auto;
   color: var(--ink);
   font-feature-settings: "palt";
+  /* 侧边栏目录跳到某一组时，别让 Streamlit 顶栏把日期挡掉 */
+  scroll-margin-top: 4.5rem;
 }
 
 /* ---------------------------------------------------------- 首页大图 */
@@ -379,7 +381,7 @@ def build_photo_group(group, gi, start):
     )
 
     doc = (
-        f'<div class="mem">{group_head_html(group)}{inputs}'
+        f'<div class="mem" id="g-{gi}">{group_head_html(group)}{inputs}'
         f'<div class="grid">{"".join(cards)}</div>'
         f'{"".join(overlays)}<style>{rules}</style></div>'
     )
@@ -393,7 +395,7 @@ st.html(build_hero())
 _index = 0
 for _gi, _group in enumerate(P.GROUPS):
     if _group.get("video"):
-        st.html(f'<div class="mem">{group_head_html(_group)}</div>')
+        st.html(f'<div class="mem" id="g-{_gi}">{group_head_html(_group)}</div>')
         _c = st.columns([1.2, 1, 1.2])
         with _c[1]:
             st.video(str(STATIC / _group["video"]))
