@@ -5,9 +5,13 @@
 # 留言本：运行时会变，不入库
 guestbook.json
 
-# 原始视频：272.9MB，超过 GitHub 单文件 100MB 硬上限。
-# 仓库里用的是 static/clip_20240825.mp4（转码后的 720p，19MB）。
+# 原始素材：根目录下只当暂存区，入库的一律是 static/ 里那份。
+# 视频原片 272.9MB 超过 GitHub 单文件 100MB 硬上限，仓库里用的是
+# static/clip_20240825.mp4（转码后的 720p，19MB）；音频同理，用 static/anheqiao.mp3。
 /*.mp4
+/*.mp3
+/*.m4a
+/*.wav
 
 # Python
 __pycache__/

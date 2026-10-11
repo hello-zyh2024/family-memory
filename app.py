@@ -473,9 +473,12 @@ with st.sidebar:
     )
     if music:
         st.markdown("**背景音乐**")
-        st.audio(str(music[0]))
+        # 浏览器普遍禁止页面在用户点过之前自动出声，autoplay 只是尽力而为，
+        # 真放不出来时下面这个播放器就是入口。
+        st.audio(str(music[0]), loop=True, autoplay=True)
+        st.caption(f'《{P.MUSIC["title"]}》· {P.MUSIC["artist"]} · 循环播放')
         if len(music) > 1:
-            st.caption(f"（另有 {len(music) - 1} 首，取的是第一首）")
+            st.caption(f"（static/ 里另有 {len(music) - 1} 首，取的是第一首）")
     else:
         st.markdown("**背景音乐**")
         st.caption("把一首 mp3 放进 static/ 目录，这里就会出现播放器。")
